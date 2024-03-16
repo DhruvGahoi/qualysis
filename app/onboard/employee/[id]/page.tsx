@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { getAllCompanies } from "@/services/company/getAllCompanies"
+import { getEmployeeById } from "@/services/employee/getEmployeeById"
 import { redirect } from "next/navigation"
 
 interface iEmployeeOnboardPage {
@@ -21,8 +22,13 @@ interface iEmployeeOnboardPage {
 }
 
 type companyOption = { name: string, id: string }
+
 export default async function EmployeeOnboardPage({ params }: iEmployeeOnboardPage) {
 
+  const { exists } = await getEmployeeById({ user_id: params.id });
+  if (exists) {
+    redirect("/dashboard");
+  }
   const companies = await getAllCompanies();
   if (companies?.length == 0) {
     // no companies are on platform yet
@@ -46,9 +52,10 @@ export default async function EmployeeOnboardPage({ params }: iEmployeeOnboardPa
         <CardContent>
           <form action={createEmployeeAction}>
             <div className="grid w-full items-center gap-4">
+              {/* <div className="text-red-400">Add a company select here!</div> */}
               {companiesOptions.length != 0 &&
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="framework">Years of Experience</Label>
+                  <Label htmlFor="framework">Select your company</Label>
                   <Select name="company_id">
                     <SelectTrigger id="company_id">
                       <SelectValue placeholder="Select" />
@@ -67,13 +74,12 @@ export default async function EmployeeOnboardPage({ params }: iEmployeeOnboardPa
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="linkedin_url">Linkedin Profile</Label>
-                <Input id="linkedin_url" placeholder="https://linkedin.com/in/username" />
+                <Input name="linkedin_url" id="linkedin_url" placeholder="https://linkedin.com/in/username" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="github_url">Github Profile</Label>
-                <Input id="github_url" placeholder="https://github.com/username" />
+                <Input name="github_url" id="github_url" placeholder="https://github.com/username" />
               </div>
-              <div className="text-red-400">Add a company select here!</div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="framework">Years of Experience</Label>
                 <Select name="years_of_experience">

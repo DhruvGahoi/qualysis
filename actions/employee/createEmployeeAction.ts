@@ -15,9 +15,5 @@ export const createEmployeeAction = async (formData: FormData) => {
     ),
   });
 
-  if (response != undefined) {
-    redirect("/dashboard");
-  } else {
-    console.log("Some error from db");
-  }
+  redirect("/dashboard");
 };

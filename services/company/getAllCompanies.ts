@@ -5,6 +5,8 @@ export const getAllCompanies = async () => {
     const response = await prisma.company.findMany();
     return response;
   } catch (error) {
+    console.log("*****************************************");
     console.log(error);
+    console.log("*****************************************");
   }
 };
