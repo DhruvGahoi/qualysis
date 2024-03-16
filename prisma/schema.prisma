@@ -45,12 +45,13 @@ enum userStatus {
 }
 
 model Company {
-  id String @id @unique
+  id String @id @unique @default(cuid())
   user_id String @unique
   name String
   description String
   location String
   company_email String
+  website_url String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   user User @relation(fields: [user_id],references: [id],onDelete: Cascade)
@@ -59,7 +60,7 @@ model Company {
 }
 
 model Employee {
-  id String @id @unique
+  id String @id @unique @default(cuid())
   user_id String @unique
   company_id String
   is_approved Boolean @default(false)
@@ -72,11 +73,19 @@ model Employee {
   company Company @relation(fields: [company_id],references: [id],onDelete: Cascade)
 }
 
+enum jobMode {
+  REMOTE
+  HYBRID
+  ONSITE
+}
+
 model Jobs {
-  id String @id @unique
+  id String @id @unique @default(cuid())
   company_id String
   role String
   job_description String
+  mode jobMode
+  location String
   exp_required Int
   openings Int
   skills String[]
@@ -90,7 +99,7 @@ model Jobs {
 }
 
 model Applicant {
-  id String @id @unique
+  id String @id @unique @default(cuid())
   user_id String
   job_id String 
   resume_url String
