@@ -4,7 +4,7 @@ import { createCandidate } from "@/services/candidate/createCandidate";
 import { userStatus } from "@prisma/client";
 import { redirect } from "next/navigation";
 
-export const createEmployeeAction = async (formData: FormData) => {
+export const createCandidateAction = async (formData: FormData) => {
   const response = await createCandidate({
     id: formData.get("id") as string,
     github_url: formData.get("github_url") as string,

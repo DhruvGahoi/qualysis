@@ -1,17 +1,17 @@
 import { prisma } from "@/lib/prisma";
-import { User } from "@prisma/client";
+import { Company } from "@prisma/client";
 
-export const getUserById = async ({ id }: Pick<User, "id">) => {
+export const getCompanyById = async ({ user_id }: Pick<Company, "user_id">) => {
   try {
-    const response = await prisma.user.findUnique({
+    const response = await prisma.company.findFirst({
       where: {
-        id,
+        user_id,
       },
     });
+
     if (response == null) {
       return { exists: false, data: null };
     }
-
     return { exists: true, data: response };
   } catch (error) {
     console.log(error);

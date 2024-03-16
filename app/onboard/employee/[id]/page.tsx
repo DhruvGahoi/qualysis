@@ -1,3 +1,4 @@
+import { createEmployeeAction } from "@/actions/employee/createEmployeeAction"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -10,7 +11,31 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-export default async function EmployeeOnboardPage() {
+import { getAllCompanies } from "@/services/company/getAllCompanies"
+import { redirect } from "next/navigation"
+
+interface iEmployeeOnboardPage {
+  params: {
+    id: string
+  }
+}
+
+type companyOption = { name: string, id: string }
+export default async function EmployeeOnboardPage({ params }: iEmployeeOnboardPage) {
+
+  const companies = await getAllCompanies();
+  if (companies?.length == 0) {
+    // no companies are on platform yet
+    redirect("/");
+  }
+
+  let companiesOptions: companyOption[] = [];
+  companies?.forEach(x => {
+    companiesOptions.push({
+      name: x.name,
+      id: x.id
+    })
+  })
   return (
     <main className="w-full h-screen flex justify-center items-center">
       <Card className="w-[450px]">
@@ -19,8 +44,23 @@ export default async function EmployeeOnboardPage() {
           <CardDescription>Tell us more about yourself to find the right interviewee!</CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form action={createEmployeeAction}>
             <div className="grid w-full items-center gap-4">
+              {companiesOptions.length != 0 &&
+                <div className="flex flex-col space-y-1.5">
+                  <Label htmlFor="framework">Years of Experience</Label>
+                  <Select name="company_id">
+                    <SelectTrigger id="company_id">
+                      <SelectValue placeholder="Select" />
+                    </SelectTrigger>
+                    <SelectContent position="popper">
+                      {companiesOptions.map((company, i) => (
+                        <SelectItem key={i} value={company.id}>{company.name}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              }
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="designation">Designation</Label>
                 <Input name="designation" placeholder="HR Manager" />
@@ -52,7 +92,8 @@ export default async function EmployeeOnboardPage() {
                 </Select>
               </div>
             </div>
-            <Button className="mt-4 w-full">Submit</Button>
+            <input name="user_id" className="hidden" defaultValue={params.id} />
+            <Button type="submit" className="mt-4 w-full">Submit</Button>
           </form>
         </CardContent>
       </Card>

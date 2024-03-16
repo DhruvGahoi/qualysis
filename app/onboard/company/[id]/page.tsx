@@ -1,3 +1,4 @@
+import { createCompanyAction } from "@/actions/company/createCompanyAction"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -10,7 +11,26 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-export default async function CompanyOnboardPage() {
+import { getCompanyById } from "@/services/company/getCompanyById"
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
+import { redirect } from "next/navigation"
+
+interface iCompanyOnboardPageParams {
+  params: {
+    id: string
+  }
+}
+export default async function CompanyOnboardPage({ params }: iCompanyOnboardPageParams) {
+  // const { getUser } = getKindeServerSession();
+
+  // const user = await getUser();
+  const { exists } = await getCompanyById({ user_id: params.id });
+  if (exists) {
+    redirect("/dashboard");
+  }
+
+  // TODO : add redirects if anyone else comes on this url
+
   return (
     <main className="w-full h-screen flex justify-center items-center">
       <Card className="w-[450px]">
@@ -19,7 +39,7 @@ export default async function CompanyOnboardPage() {
           <CardDescription>Tell us more about your company to get more reach</CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form action={createCompanyAction}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name">Name</Label>
@@ -30,8 +50,8 @@ export default async function CompanyOnboardPage() {
                 <Textarea name="description" placeholder="Tell us what you do" />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="email">Company Email</Label>
-                <Input id="email" placeholder="abc@org.ac.in" />
+                <Label htmlFor="company_email">Company Email</Label>
+                <Input id="company_email" placeholder="abc@org.ac.in" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="location">Company Email</Label>
@@ -42,7 +62,8 @@ export default async function CompanyOnboardPage() {
                 <Input id="website_url" placeholder="https://abc.com" />
               </div>
             </div>
-            <Button className="mt-4 w-full">Submit</Button>
+            <input className="hidden" name="user_id" defaultValue={params.id} />
+            <Button type="submit" className="mt-4 w-full">Submit</Button>
           </form>
         </CardContent>
       </Card>

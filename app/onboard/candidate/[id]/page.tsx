@@ -1,3 +1,4 @@
+import { createCandidateAction } from "@/actions/user/createCandidateAction"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -10,7 +11,22 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-export default async function CandidateOnboardPage() {
+import { getUserById } from "@/services/user/getUser"
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
+import { redirect } from "next/navigation";
+
+interface iCandidateOnboardPageParams {
+  params: {
+    id: string
+  }
+}
+export default async function CandidateOnboardPage({ params }: iCandidateOnboardPageParams) {
+  const { exists, data } = await getUserById({ id: params.id });
+
+  if (exists && data && data.role != "CANDIDATE") {
+    redirect("/dashboard")
+  }
+
   return (
     <main className="w-full h-screen flex justify-center items-center">
       <Card className="w-[450px]">
@@ -19,7 +35,7 @@ export default async function CandidateOnboardPage() {
           <CardDescription>Tell us more about yourself to find best jobs for you!</CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form action={createCandidateAction}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="resume_url">Resume link</Label>
@@ -58,6 +74,7 @@ export default async function CandidateOnboardPage() {
                 </Select>
               </div>
             </div>
+            <input name="id" className="hidden" defaultValue={params.id} />
             <Button className="mt-4 w-full">Submit</Button>
           </form>
         </CardContent>
