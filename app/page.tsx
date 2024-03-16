@@ -1,10 +1,23 @@
-import { Button } from "@/components/ui/button";
 
-export default function Home() {
+import Blogs from "@/components/Blogs"
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
+import Hero from "@/components/Hero"
+import InterviewFeedback from "@/components/InterviewFeedback"
+import SearchBar from "@/components/SearchBar"
+
+export default function Component() {
   return (
-    <main>
-      <p>INIT</p>
-      <Button>Click Me</Button>
+    <main className="relative bg-white">
+      <Header />
+      <Hero />
+      <SearchBar />
+      <InterviewFeedback />
+      <Blogs />
+      <Footer />
     </main>
-  );
+  )
 }
+
+
+
