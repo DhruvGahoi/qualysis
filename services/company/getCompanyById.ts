@@ -3,7 +3,7 @@ import { Company } from "@prisma/client";
 
 export const getCompanyById = async ({ user_id }: Pick<Company, "user_id">) => {
   try {
-    const response = await prisma.company.findMany({
+    const response = await prisma.company.findFirst({
       where: {
         user_id,
       },
