@@ -3,12 +3,11 @@ import { Company } from "@prisma/client";
 
 export const getCompanyById = async ({ user_id }: Pick<Company, "user_id">) => {
   try {
-    const response = await prisma.company.findFirst({
+    const response = await prisma.company.findMany({
       where: {
         user_id,
       },
     });
-
     if (response == null) {
       return { exists: false, data: null };
     }

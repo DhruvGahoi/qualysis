@@ -24,13 +24,9 @@ export default async function OnboardPage() {
 
   const { getUser } = getKindeServerSession()
   const user = await getUser();
-
-  const userAlreadyExsits = await getUserById({ id: user?.id as string })
-  if (userAlreadyExsits === undefined) {
-    console.log("Error from database")
-  } else if (userAlreadyExsits) {
-    // TODO : Add redirects to respective onboard pages as per role
-    redirect("/dashboard");
+  const { exists, data } = await getUserById({ id: user?.id as string })
+  if (exists) {
+    redirect("/dashboard")
   }
   return (
     <main className="h-screen w-full flex justify-center items-center ">
@@ -59,7 +55,7 @@ export default async function OnboardPage() {
             <input name="id" className="hidden" defaultValue={user?.id as string} />
             <input name="email" className="hidden" defaultValue={user?.email as string} />
             <input name="first_name" className="hidden" defaultValue={user?.given_name as string} />
-            <input name="family_name" className="hidden" defaultValue={user?.family_name as string} />
+            <input name="last_name" className="hidden" defaultValue={user?.family_name as string} />
             <input name="profile_image_url" className="hidden" defaultValue={user?.picture as string} />
 
             <Button type="submit" className="w-full mt-4">Next</Button>

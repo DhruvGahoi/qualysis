@@ -21,9 +21,7 @@ interface iCompanyOnboardPageParams {
   }
 }
 export default async function CompanyOnboardPage({ params }: iCompanyOnboardPageParams) {
-  // const { getUser } = getKindeServerSession();
 
-  // const user = await getUser();
   const { exists } = await getCompanyById({ user_id: params.id });
   if (exists) {
     redirect("/dashboard");
@@ -43,7 +41,7 @@ export default async function CompanyOnboardPage({ params }: iCompanyOnboardPage
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Name of your company" />
+                <Input id="name" name="name" placeholder="Name of your company" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="description">Description</Label>
@@ -51,15 +49,15 @@ export default async function CompanyOnboardPage({ params }: iCompanyOnboardPage
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="company_email">Company Email</Label>
-                <Input id="company_email" placeholder="abc@org.ac.in" />
+                <Input name="company_email" id="company_email" placeholder="abc@org.ac.in" />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="location">Company Email</Label>
-                <Input id="location" placeholder="123, ABC street, XYZ (221123)" />
+                <Label htmlFor="location">Location</Label>
+                <Input id="location" name="location" placeholder="123, ABC street, XYZ (221123)" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="website_url">Website</Label>
-                <Input id="website_url" placeholder="https://abc.com" />
+                <Input id="website_url" name="website_url" placeholder="https://abc.com" />
               </div>
             </div>
             <input className="hidden" name="user_id" defaultValue={params.id} />

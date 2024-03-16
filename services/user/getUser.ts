@@ -8,11 +8,10 @@ export const getUserById = async ({ id }: Pick<User, "id">) => {
         id,
       },
     });
-    if (response == null) {
-      return { exists: false, data: null };
+    if (response != null) {
+      return { exists: true, data: null };
     }
-
-    return { exists: true, data: response };
+    return { exists: false, data: response };
   } catch (error) {
     console.log(error);
     return { exists: undefined, data: null };

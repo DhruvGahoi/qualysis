@@ -8,13 +8,11 @@ export const createCompanyAction = async (formData: FormData) => {
     user_id: formData.get("user_id") as string,
     company_email: formData.get("company_email") as string,
     description: formData.get("description") as string,
-    location: formData.get("location as string") as string,
+    location: formData.get("location") as string,
     name: formData.get("name") as string,
     website_url: formData.get("website_url") as string,
   });
   if (response != undefined) {
     redirect("/dashboard");
-  } else {
-    console.log("Some error from db");
   }
 };

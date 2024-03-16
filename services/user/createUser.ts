@@ -8,13 +8,21 @@ export const createUser = async ({
   role,
   profile_image_url,
   status,
+  id,
 }: Pick<
   User,
-  "first_name" | "last_name" | "role" | "email" | "profile_image_url" | "status"
+  | "id"
+  | "first_name"
+  | "last_name"
+  | "role"
+  | "email"
+  | "profile_image_url"
+  | "status"
 >) => {
   try {
     const resposne = await prisma.user.create({
       data: {
+        id,
         first_name,
         last_name,
         email,
