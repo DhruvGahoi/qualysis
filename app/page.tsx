@@ -4,7 +4,6 @@ import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextj
 export default function Home() {
   return (
     <main>
-      <p>INIT</p>
       <Button>
         <RegisterLink>Sign up</RegisterLink>
       </Button>
