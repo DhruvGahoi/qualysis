@@ -11,11 +11,9 @@ export async function middleware(request: NextRequest) {
   }
 }
 export const config = {
-  matcher: [
-    "/onboard",
-    "/onboard/candidate/:path*",
-    "/onboard/employee/:path*",
-    "/onboard/company/:path*",
-    "/dashboard",
-  ],
+  matcher: ["/onboard", "/dashboard"],
 };
+
+// "/onboard/candidate/:path*",
+//     "/onboard/employee/:path*",
+//     "/onboard/company/:path",
