@@ -15,6 +15,9 @@ export const disapproveEmployee = async ({
         is_approved: false,
         is_invalid: true,
       },
+      include: {
+        company: true,
+      },
     });
     return response;
   } catch (error) {

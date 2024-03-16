@@ -1,15 +1,13 @@
 import { prisma } from "@/lib/prisma";
-import { Employee } from "@prisma/client";
+import { Company } from "@prisma/client";
 
-export const getRequestEmployee = async ({
-  company_id,
-}: Pick<Employee, "company_id">) => {
+export const getAllEmployee = async ({ id }: Pick<Company, "id">) => {
   try {
     const response = await prisma.employee.findMany({
       where: {
-        company_id,
+        company_id: id,
+        is_approved: true,
         is_invalid: false,
-        is_approved: false,
       },
       include: {
         user: true,

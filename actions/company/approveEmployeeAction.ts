@@ -10,5 +10,5 @@ export const approveEmployeeAction = async (formdata: FormData) => {
   });
 
   // TODO : write correct path here
-  revalidatePath("/");
+  revalidatePath(`/dashboard/company/${response?.company.id}`);
 };
