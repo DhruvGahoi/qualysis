@@ -23,7 +23,7 @@ interface iCandidateOnboardPageParams {
 export default async function CandidateOnboardPage({ params }: iCandidateOnboardPageParams) {
   const { exists, data } = await getUserById({ id: params.id });
 
-  if (exists && data && data.role != "CANDIDATE") {
+  if (exists && data?.role != "CANDIDATE") {
     redirect("/dashboard")
   }
 
@@ -43,26 +43,22 @@ export default async function CandidateOnboardPage({ params }: iCandidateOnboard
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="linkedin_url">Linkedin Profile</Label>
-                <Input id="linkedin_url" placeholder="https://linkedin.com/in/username" />
+                <Input name="linkedin_url" id="linkedin_url" placeholder="https://linkedin.com/in/username" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="github_url">Github Profile</Label>
-                <Input id="github_url" placeholder="https://github.com/username" />
+                <Input name="github_url" id="github_url" placeholder="https://github.com/username" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="portfolio_url">Portfolio Website</Label>
-                <Input id="portfolio_url" placeholder="https://abc.me" />
+                <Input name="portfolio_url" id="portfolio_url" placeholder="https://abc.me" />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="location">Company Email</Label>
-                <Input id="location" placeholder="123, ABC street, XYZ (221123)" />
+                <Label htmlFor="location">Location</Label>
+                <Input name="location" id="location" placeholder="123, ABC street, XYZ (221123)" />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="website_url">Website</Label>
-                <Input id="website_url" placeholder="https://abc.com" />
-              </div>
-              <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="framework">Your Role</Label>
+                <Label htmlFor="framework">Your employment status</Label>
                 <Select name="status">
                   <SelectTrigger id="status">
                     <SelectValue placeholder="Select" />
