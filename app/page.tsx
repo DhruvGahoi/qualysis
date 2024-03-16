@@ -1,18 +1,23 @@
-import { Button } from "@/components/ui/button";
-import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/server";
 
-export default function Home() {
+import Blogs from "@/components/Blogs"
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
+import Hero from "@/components/Hero"
+import InterviewFeedback from "@/components/InterviewFeedback"
+import SearchBar from "@/components/SearchBar"
+
+export default function Component() {
   return (
-    <main>
-      <Button>
-        <RegisterLink>Sign up</RegisterLink>
-      </Button>
-      <Button>
-        <LoginLink>Login in</LoginLink>
-      </Button>
-      <Button>
-        <LogoutLink>Logout Link</LogoutLink>
-      </Button>
+    <main className="relative bg-white">
+      <Header />
+      <Hero />
+      <SearchBar />
+      <InterviewFeedback />
+      <Blogs />
+      <Footer />
     </main>
-  );
+  )
 }
+
+
+
