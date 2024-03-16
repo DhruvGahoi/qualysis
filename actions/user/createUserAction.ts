@@ -1,12 +1,13 @@
 "use server";
 
+import { getCompanyById } from "@/services/company/getCompanyById";
 import { createUser } from "@/services/user/createUser";
 import { userRole } from "@prisma/client";
 import { redirect } from "next/navigation";
 
 export const createUserAction = async (formData: FormData) => {
   const role = formData.get("role") as userRole;
-  const resposne = await createUser({
+  const response = await createUser({
     id: formData.get("id") as string,
     first_name: formData.get("first_name") as string,
     last_name: formData.get("last_name") as string,
@@ -16,13 +17,20 @@ export const createUserAction = async (formData: FormData) => {
     role,
   });
 
-  if (resposne !== undefined) {
+  if (response !== undefined) {
     if (role === "CANDIDATE") {
-      redirect(`/onboard/candidate/${resposne.id}`);
+      redirect(`/onboard/candidate/${response.id}`);
     } else if (role == "COMPANY") {
-      redirect(`/onboard/company/${resposne.id}`);
+      const { exists, data } = await getCompanyById({
+        user_id: formData.get("id") as string,
+      });
+      if (exists && data != null) {
+        redirect(`/onboard/company/${data.id}`);
+      } else {
+        redirect("/");
+      }
     } else {
-      redirect(`/onboard/employee/${resposne.id}`);
+      redirect(`/onboard/employee/${response.id}`);
     }
   } else {
     console.log("Error creating user");
