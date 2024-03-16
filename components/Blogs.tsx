@@ -62,7 +62,7 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export default function Blogs() {
   return (
-    <section id="blog" className="py-20 bg-black/[0.96] dark:bg-gray-900 bg-grid-white/[0.05]">
+    <section id="blog" className="py-20 bg-black/[0.96] bg-grid-white/[0.05]">
        <h2 className="text-lg items-center justify-center flex font-bold text-white mb-4">
           Tips for Acing Your Next Interview
         </h2>

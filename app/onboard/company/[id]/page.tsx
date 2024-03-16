@@ -23,9 +23,10 @@ interface iCompanyOnboardPageParams {
 export default async function CompanyOnboardPage({ params }: iCompanyOnboardPageParams) {
 
   const { exists } = await getCompanyById({ user_id: params.id });
-  if (exists) {
-    redirect("/dashboard");
-  }
+  // if (exists) {
+  //   // redirect("/dashboard");
+
+  // }
 
   // TODO : add redirects if anyone else comes on this url
 

@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function Hero() {
     return (
 
-        <section id="header" className="pt-32 pb-20 bg-black/[0.96] bg-gray-900">
+        <section id="header" className="pt-32 pb-20 bg-black/[0.96]">
             <Spotlight
                 className="-top-40 left-0 md:left-60 md:-top-20"
                 fill="gray"

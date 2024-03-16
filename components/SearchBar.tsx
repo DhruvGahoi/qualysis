@@ -4,7 +4,7 @@ import { LampContainer } from "@/components/ui/lamp";
 export default function SearchBar() {
   return (
 
-    <section id="interview" className="py-20 bg-black/[0.96] dark:bg-gray-800">
+    <section id="interview" className="py-20 bg-black/[0.96] ">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="w-full lg:w-1/2">
