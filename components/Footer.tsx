@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-white py-8">
+        <footer id="about" className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="mb-4 md:mb-0">© 2024 Interview Platform. All rights reserved.</p>
+          <p className="mb-4 md:mb-0">© 2024 Qualisys. All rights reserved.</p>
           <nav className="flex space-x-4">
             <Link className="text-gray-400 hover:text-white transition-colors duration-300" href="#">
               Terms

@@ -1,10 +1,11 @@
 import { Spotlight } from "@/components/ui/Spotlight"
+import Link from "next/link"
 
 
 export default function Hero() {
     return (
         
-            <section className="pt-32 pb-20 bg-black/[0.96] dark:bg-gray-900">
+            <section id="header" className="pt-32 pb-20 bg-black/[0.96] dark:bg-gray-900">
                 <Spotlight
                     className="-top-40 left-0 md:left-60 md:-top-20"
                     fill="gray"
@@ -23,9 +24,11 @@ export default function Hero() {
                     expert tips, and practice your skills.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                    <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300">
-                    Sign Up
-                    </button>
+                    <Link href="/signup">
+                        <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300">
+                        Sign Up
+                        </button>
+                    </Link>
                     <button className="bg-transparent hover:underline text-white font-bold py-3 px-6 rounded-md transition-colors duration-300">
                     Learn More
                     </button>
