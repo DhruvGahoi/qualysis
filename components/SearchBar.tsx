@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { LampContainer } from "@/components/ui/lamp";
+
 
 export default function SearchBar() {
   return (
@@ -23,19 +22,7 @@ export default function SearchBar() {
               </button>
             </div>
           </div>
-          <div className="w-full lg:w-1/2">
-            {/* <img
-                alt="Search Interviews"
-                className="w-full h-auto rounded-lg shadow-lg"
-                height="500"
-                src="/placeholder.svg"
-                style={{
-                  aspectRatio: "700/500",
-                  objectFit: "cover",
-                }}
-                width="700"
-              /> */}
-          </div>
+
         </div>
       </div>
     </section>

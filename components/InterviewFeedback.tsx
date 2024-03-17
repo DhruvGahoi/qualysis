@@ -62,7 +62,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export default function InterviewFeedback() {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black/[0.96] dark:bg-black bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black/[0.96] bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
@@ -75,31 +75,31 @@ export default function InterviewFeedback() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+      "Using Qualisys for my job hunt was a game-changer! Seriously, it made everything so much smoother. I could easily schedule interviews, keep track of everything, and even get feedback. It took a load off my mind, and I couldn't be happier with how it all went down.",
     name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+    title: "",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+      "Qualisys totally surprised me - in a good way! I expected another complicated job app process, but this was different. It felt like they actually cared about making things easier for me. I mean, who knew scheduling interviews could be this stress-free? Big thumbs up from me!",
     name: "William Shakespeare",
-    title: "Hamlet",
+    title: "",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
+    quote: "Man, Qualisys was a game-changer for me. I was dreading the whole job application thing, but this platform made it surprisingly painless. Scheduling interviews was a breeze, and I loved how I could track everything in one place. Seriously, if you're job hunting, give Qualisys a shot - you won't regret it!",
     name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+    title: "",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "Qualisys was a total lifesaver during my job hunt. I mean, it's not often you find a platform that actually makes things easier. From scheduling interviews to getting feedback, it was all a breeze. If you're tired of the usual job app struggles, definitely give Qualisys a shot - you'll thank me later!",
     name: "Jane Austen",
-    title: "Pride and Prejudice",
+    title: "",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+      "I was pleasantly surprised by how smooth Qualisys made my job application process. It's like they took all the usual hassles and just made them disappear. I could focus on preparing for interviews instead of stressing about logistics. Qualisys definitely gets a thumbs up from me!",
     name: "Herman Melville",
-    title: "Moby-Dick",
+    title: "",
   },
 ];

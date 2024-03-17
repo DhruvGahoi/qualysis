@@ -1,4 +1,5 @@
 import { createCandidateAction } from "@/actions/user/createCandidateAction"
+import Loading from "@/components/Loading"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -71,7 +72,8 @@ export default async function CandidateOnboardPage({ params }: iCandidateOnboard
               </div>
             </div>
             <input name="id" className="hidden" defaultValue={params.id} />
-            <Button className="mt-4 w-full">Submit</Button>
+            <Loading />
+            {/* <Button className="mt-4 w-full">Submit</Button> */}
           </form>
         </CardContent>
       </Card>

@@ -1,4 +1,5 @@
 import { createEmployeeAction } from "@/actions/employee/createEmployeeAction"
+import Loading from "@/components/Loading"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -99,7 +100,8 @@ export default async function EmployeeOnboardPage({ params }: iEmployeeOnboardPa
               </div>
             </div>
             <input name="user_id" className="hidden" defaultValue={params.id} />
-            <Button type="submit" className="mt-4 w-full">Submit</Button>
+            <Loading />
+            {/* <Button type="submit" className="mt-4 w-full">Submit</Button> */}
           </form>
         </CardContent>
       </Card>
