@@ -49,6 +49,8 @@ At its core, Qualysis is an innovative interview platform meticulously crafted t
 2. Shadcn UI - Component Library
 3. Tailwind CSS - Utiliy-first CSS Framework
 4. PostgreSQL - Database
+5. Aceternity UI - Component Library
+6. Prisma - ORM
 
 ## Database ER diagram
 

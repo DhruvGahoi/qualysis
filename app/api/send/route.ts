@@ -6,9 +6,9 @@ const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 export async function POST() {
   try {
     const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "Qualisys <onboarding@resend.dev>",
       to: ["danimahendra0904@gmail.com"],
-      subject: "Hello world",
+      subject: "Congradulations! You are accepted",
       react: AcceptanceEmail({
         candidateName: "Mahendra Dani",
         companyName: "Famazon",
