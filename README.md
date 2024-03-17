@@ -1,6 +1,12 @@
 # Qualisys - A platform for job seekers and employers
 
-## description
+## Problem Statement
+
+**PS ID: AB01**
+
+Traditional interview processes are often cumbersome, involving manual scheduling, multiple back-and-forths via email, and limited visibility during the coding assessment phase. These inefficiencies can lead to delays in the hiring process and hinder candidate experience.
+
+## Solution
 
 In the dynamic landscape of talent acquisition, the process of conducting interviews has long been fraught with challenges and difficulties. Usually methods often involve manual scheduling, extensive cold emailing, leading to delays in hiring and subpar candidate experiences. Recognizing these pain points, Qualysis emerges as a groundbreaking solution, poised to revolutionize the interview process for companies worldwide.
 
