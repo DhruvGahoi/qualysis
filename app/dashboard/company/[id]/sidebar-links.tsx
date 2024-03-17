@@ -18,13 +18,13 @@ export const SidebarLinks = () => {
   return (
     <main>
       <nav className="flex flex-col gap-1">
-        <Link
+        {/* <Link
           className={`text-sm font-medium rounded-md px-3 py-2 flex items-center gap-2  ${pathname == homePath ? "bg-gray-900" : "hover:bg-gray-900"} dark:text-gray-100`}
           href={homePath}
         >
           <HomeIcon className="h-5 w-5" />
           Home
-        </Link>
+        </Link> */}
         <Link className={`text-sm font-medium rounded-md px-3 py-2 flex items-center gap-2 ${pathname == jobsPath ? "bg-gray-900" : "hover:bg-gray-900"}`} href={jobsPath}>
           <ClockIcon className="h-5 w-5" />
           Jobs
