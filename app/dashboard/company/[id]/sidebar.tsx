@@ -1,6 +1,7 @@
 import { Avatar } from "@/components/ui/avatar"
 import { CalendarIcon, ClockIcon, HomeIcon, UserIcon } from "lucide-react"
 import Link from "next/link"
+import { SidebarLinks } from "./sidebar-links"
 
 export const CompanySidebar = () => {
   return (
@@ -24,23 +25,8 @@ export const CompanySidebar = () => {
           <div className="text-sm text-gray-500 dark:text-gray-400">Interviewee</div>
         </div>
       </div>
-      <nav className="flex flex-col gap-1">
-        <Link
-          className="text-sm font-medium rounded-md px-3 py-2 flex items-center gap-2 bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100"
-          href="#"
-        >
-          <HomeIcon className="h-5 w-5" />
-          Home
-        </Link>
-        <Link className="text-sm font-medium rounded-md px-3 py-2 flex items-center gap-2 hover:bg-gray-900" href="#">
-          <ClockIcon className="h-5 w-5" />
-          Jobs
-        </Link>
-        <Link className="text-sm font-medium rounded-md px-3 py-2 flex items-center gap-2 hover:bg-gray-900" href="#">
-          <UserIcon className="h-5 w-5" />
-          Interview
-        </Link>
-      </nav>
+
+      <SidebarLinks />
     </div>
   )
 }
