@@ -30,7 +30,7 @@ export default async function OnboardPage() {
     if (userDetails?.role == "COMPANY") {
       const { exists, data } = await getCompanyById({ user_id: user?.id as string });
       if (exists && data != null) {
-        redirect(`/dashboard/company/${data.id}`)
+        redirect(`/dashboard/company/jobs/${data.id}`)
       } else {
         redirect("/");
       }
