@@ -16,7 +16,7 @@ export const createCandidateAction = async (formData: FormData) => {
   });
 
   if (response != undefined) {
-    redirect("/dashboard");
+    redirect(`/dashboard/candidate/${response.id}`);
   } else {
     console.log("Some error from db");
   }
