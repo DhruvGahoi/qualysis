@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { getCompanyById } from "@/services/company/getCompanyById"
 import { getUserById } from "@/services/user/getUser"
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server"
 import { redirect } from "next/navigation"
@@ -24,9 +25,21 @@ export default async function OnboardPage() {
 
   const { getUser } = getKindeServerSession()
   const user = await getUser();
-  const { exists, data } = await getUserById({ id: user?.id as string })
+  const { exists, data: userDetails } = await getUserById({ id: user?.id as string })
   if (exists) {
-    redirect("/dashboard")
+    if (userDetails?.role == "COMPANY") {
+      const { exists, data } = await getCompanyById({ user_id: user?.id as string });
+      if (exists && data != null) {
+        redirect(`/dashboard/company/${data.id}`)
+      } else {
+        redirect("/");
+      }
+    } else if (userDetails?.role == "CANDIDATE") {
+      redirect(`/dashboard/candidate/${user?.id as string}`);
+    } else {
+      // TODO : handle redirects for employee late
+      redirect(`/dashboard/candidate/${user?.id as string}`);
+    }
   }
   return (
     <main className="h-screen w-full flex justify-center items-center ">
