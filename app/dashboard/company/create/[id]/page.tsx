@@ -7,7 +7,7 @@ interface iCreateJobParams {
 }
 export default async function CreateJob({ params }: iCreateJobParams) {
   return (
-    <main>
+    <main className="z-10">
       <h1 className="text-2xl font-bold pb-4">CREATE JOB</h1>
       <CreateJobForm company_id={params.id} />
     </main>

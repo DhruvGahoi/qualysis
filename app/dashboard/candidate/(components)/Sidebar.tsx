@@ -2,6 +2,7 @@ import { Avatar } from "@/components/ui/avatar"
 import { CalendarIcon, ClockIcon, HomeIcon, UserIcon } from "lucide-react"
 import Link from "next/link"
 import { CSidebarLinks } from "./csidebar-links"
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
 
 
 export default function SideBar() {
@@ -27,6 +28,9 @@ export default function SideBar() {
         </div>
       </div>
       <CSidebarLinks />
+      <div className="text-sm font-medium rounded-md px-3 py-2 flex items-center gap-2 hover:bg-gray-900">
+        <LogoutLink>Log out</LogoutLink>
+      </div>
     </div>
   )
 }
