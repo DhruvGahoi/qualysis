@@ -10,6 +10,8 @@ import { getJobsCreatedByCompanyCuid } from "@/services/jobs/getJobsCreatedByCom
 import { getRequestEmployee } from "@/services/company/getRequestEmployee"
 import { EmployeeRequestCard } from "@/components/custom/employee-req-card"
 import { getAllEmployee } from "@/services/company/getAllEmployee"
+import SideBar from "../../candidate/(components)/Sidebar"
+import { CompanySidebar } from "./sidebar"
 
 interface iCompanyDashboardPageParams {
   params: {

@@ -25,5 +25,7 @@ export const createJobOpeningAction = async (formData: FormData) => {
     role: formData.get("role") as string,
   });
   console.log(response);
-  revalidatePath(`/dashboard/company/${formData.get("company_id") as string}`);
+  revalidatePath(
+    `/dashboard/company/jobs/${formData.get("company_id") as string}`
+  );
 };

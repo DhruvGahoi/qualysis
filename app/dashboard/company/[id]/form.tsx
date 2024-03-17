@@ -60,7 +60,7 @@ export const CreateJobForm = ({ company_id }: { company_id: string }) => {
     await createJobOpeningAction(formData)
   }
   return (
-    <Card className="w-[450px]">
+    <Card className="">
       <CardHeader>
         <CardTitle>Create Job Opening</CardTitle>
         <CardDescription>Create a new job opening for your company</CardDescription>
