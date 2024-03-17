@@ -1,5 +1,10 @@
+"use client"
 import { Spotlight } from "@/components/ui/Spotlight"
 import Link from "next/link"
+import { motion } from "framer-motion";
+import EarthCanvas from "./Earth";
+import { slideIn } from "@/utils/motion";
+
 
 
 export default function Hero() {
@@ -35,17 +40,12 @@ export default function Hero() {
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2">
-                        {/* <img
-                    alt="Interview Platform"
-                    className="w-full h-auto rounded-lg shadow-lg"
-                    height="500"
-                    src="/placeholder.svg"
-                    style={{
-                    aspectRatio: "700/500",
-                    objectFit: "cover",
-                    }}
-                    width="700"
-                /> */}
+                    {/* <motion.div
+                        variants={slideIn("left", "tween", 0.2, 1)}
+                        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+                    >
+                        <EarthCanvas />
+                    </motion.div> */}
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import { createCompanyAction } from "@/actions/company/createCompanyAction"
+import Loading from "@/components/Loading"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -62,7 +63,8 @@ export default async function CompanyOnboardPage({ params }: iCompanyOnboardPage
               </div>
             </div>
             <input className="hidden" name="user_id" defaultValue={params.id} />
-            <Button type="submit" className="mt-4 w-full">Submit</Button>
+            <Loading />
+            {/* <Button type="submit" className="mt-4 w-full">Submit</Button> */}
           </form>
         </CardContent>
       </Card>
