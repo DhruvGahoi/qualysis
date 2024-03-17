@@ -13,6 +13,6 @@ export const createCompanyAction = async (formData: FormData) => {
     website_url: formData.get("website_url") as string,
   });
   if (response != undefined) {
-    redirect(`/dashboard/company/${response.id}`);
+    redirect(`/dashboard/company/jobs/${response.id}`);
   }
 };

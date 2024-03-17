@@ -3,6 +3,7 @@
 import { createJobOpening } from "@/services/company/createJobOpening";
 import { jobMode, skillsRequired } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export const createJobOpeningAction = async (formData: FormData) => {
   // TODO : Only companies should be able to create a opening
@@ -25,7 +26,5 @@ export const createJobOpeningAction = async (formData: FormData) => {
     role: formData.get("role") as string,
   });
   console.log(response);
-  revalidatePath(
-    `/dashboard/company/jobs/${formData.get("company_id") as string}`
-  );
+  redirect(`/dashboard/company/jobs/${formData.get("company_id") as string}`);
 };
