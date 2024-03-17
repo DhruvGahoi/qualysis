@@ -6,6 +6,12 @@
 
 Traditional interview processes are often cumbersome, involving manual scheduling, multiple back-and-forths via email, and limited visibility during the coding assessment phase. These inefficiencies can lead to delays in the hiring process and hinder candidate experience.
 
+- [Presentation Video](https://www.loom.com/share/a4cb392de49e4d7f910c9a2908217d82?sid=95a36a9b-d54e-49df-ab5c-11266128966b)
+
+- [Demo Video](https://www.loom.com/share/5c4292ff4f4449d9a772680fb0ab187c?sid=83c760e4-4e0d-4c2e-a4bd-4e1bd1f14797)
+
+- [Backend video](https://www.loom.com/share/8b5b57f4f63047eb8bdd1134b2c6d5bc?sid=7358d476-13f5-45e2-9b4b-a83dc1fc0937)
+
 ## Solution
 
 In the dynamic landscape of talent acquisition, the process of conducting interviews has long been fraught with challenges and difficulties. Usually methods often involve manual scheduling, extensive cold emailing, leading to delays in hiring and subpar candidate experiences. Recognizing these pain points, Qualysis emerges as a groundbreaking solution, poised to revolutionize the interview process for companies worldwide.
