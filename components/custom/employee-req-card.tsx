@@ -11,12 +11,13 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { approveEmployeeAction } from "@/actions/company/approveEmployeeAction";
 import { disapproveEmployeeAction } from "@/actions/company/disapproveEmployeeAction";
+import { GithubIcon, Linkedin } from "lucide-react";
 
 
 export const EmployeeRequestCard = async ({ employee }: { employee: any }) => {
 
   return (
-    <Card className="pt-4">
+    <Card className="pt-4 w-[35rem]">
       <CardContent className="flex flex-col justify-start gap-2">
         <div className="flex justify-start items-center gap-3">
           <img src={employee.user.profile_image_url} className="w-12 h-12 rounded-full border-2 border-red-50" alt="User proflie image" />
@@ -31,10 +32,10 @@ export const EmployeeRequestCard = async ({ employee }: { employee: any }) => {
           </div>
           <div className="flex justify-between items-center gap-1">
             <Link href={employee.github_url}>
-              Github
+              <GithubIcon />
             </Link>
             <Link href={employee.linkedin_url}>
-              Linkedin
+              <Linkedin />
             </Link>
           </div>
         </div>
