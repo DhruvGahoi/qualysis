@@ -2,10 +2,13 @@ import { Avatar } from "@/components/ui/avatar"
 import { CalendarIcon, ClockIcon, HomeIcon, UserIcon } from "lucide-react"
 import Link from "next/link"
 import { SidebarLinks } from "./sidebar-links"
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server"
+import { CpmAvt } from "@/components/cpm-avt"
 
 export const CompanySidebar = () => {
   return (
     <div className="md:col-span-3 grid gap-3 z-10">
+      {/* <CpmAvt /> */}
       <div className="flex items-center gap-3">
         <Avatar className="w-10 h-10">
           <img
@@ -27,6 +30,9 @@ export const CompanySidebar = () => {
       </div>
 
       <SidebarLinks />
+      <div className="text-sm font-medium rounded-md px-3 py-2 flex items-center gap-2 hover:bg-gray-900">
+        <LogoutLink>Log out</LogoutLink>
+      </div>
     </div>
   )
 }

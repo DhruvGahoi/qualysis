@@ -1,5 +1,6 @@
 "use client";
 
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
 import { ClockIcon, HomeIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -41,6 +42,6 @@ export const SidebarLinks = () => {
           Interview
         </Link>
       </nav>
-    </main>
+    </main >
   )
 }
