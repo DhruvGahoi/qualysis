@@ -1,8 +1,5 @@
 # Qualisys - A platform for job seekers and employers
 
-## Problem Statement
-
-**PS ID: AB01**
 
 Traditional interview processes are often cumbersome, involving manual scheduling, multiple back-and-forths via email, and limited visibility during the coding assessment phase. These inefficiencies can lead to delays in the hiring process and hinder candidate experience.
 
