@@ -1,8 +1,7 @@
-import { Avatar } from "@/components/ui/avatar"
-import { CalendarIcon, ClockIcon, HomeIcon, UserIcon } from "lucide-react"
-import Link from "next/link"
-import { CSidebarLinks } from "./csidebar-links"
+import { Avatar } from "@/components/ui/avatar";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
+import Image from "next/image";
+import { CSidebarLinks } from "./csidebar-links";
 
 
 export default function SideBar() {
@@ -10,7 +9,7 @@ export default function SideBar() {
     <div className="md:col-span-3 grid gap-3 z-10">
       <div className="flex items-center gap-3">
         <Avatar className="w-10 h-10">
-          <img
+          <Image
             alt="Avatar"
             className="rounded-full"
             height="40"

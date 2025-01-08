@@ -1,6 +1,7 @@
-import { getCompanyByCuid } from "@/services/company/getCompanyByCuid"
-import { Avatar } from "./ui/avatar"
-import { useEffect, useState } from "react"
+import { getCompanyByCuid } from "@/services/company/getCompanyByCuid";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Avatar } from "./ui/avatar";
 
 export const CompanySidebarAvatar = ({ id }: { id: string }) => {
   const [companyName, setCompanyName] = useState("");
@@ -14,11 +15,11 @@ export const CompanySidebarAvatar = ({ id }: { id: string }) => {
 
   useEffect(() => {
     hanldeGetCompanyDetails();
-  }, [])
+  })
   return (
     <div className="flex items-center gap-3">
       <Avatar className="w-10 h-10">
-        <img
+        <Image
           alt="Avatar"
           className="rounded-full"
           height="40"

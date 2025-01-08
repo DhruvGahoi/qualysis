@@ -1,11 +1,6 @@
 "use client"
-import { Spotlight } from "@/components/ui/Spotlight"
-import Link from "next/link"
-import { motion } from "framer-motion";
-import EarthCanvas from "./Earth";
-import { slideIn } from "@/utils/motion";
-
-
+import { Spotlight } from "@/components/ui/Spotlight";
+import Link from "next/link";
 
 export default function Hero() {
     return (
