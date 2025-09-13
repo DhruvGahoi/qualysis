@@ -43,8 +43,6 @@ At its core, Qualysis is an innovative interview platform meticulously crafted t
 
 1. [Dhruv Gahoi](https://github.com/DhruvGahoi)
 2. [Mahendra Dani](https://github.com/MahendraDani)
-3. [Bhavya Saini](https://github.com/bhqv)
-4. [Prabhu Naman](https://github.com/prabhunaman)
 
 ## Tech stack
 
